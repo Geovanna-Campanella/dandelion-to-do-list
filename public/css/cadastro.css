@@ -1,0 +1,700 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+    --background: #F8F7F1;
+    --surface: #FFFEFA;
+
+    --yellow: #E8C75A;
+    --yellow-dark: #D4AF36;
+    --yellow-light: #F6E9B7;
+
+    --beige: #EAE2D1;
+    --beige-dark: #D8CEB8;
+
+    --green: #7E8B68;
+    --green-light: #E8EDDF;
+
+    --text: #302F28;
+    --text-secondary: #817D70;
+    --text-light: #A29B8C;
+
+    --border: #EAE6DB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 24px;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+
+.login-page {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    width: 100%;
+    max-width: 1240px;
+    min-height: 760px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid rgba(216, 206, 184, 0.45);
+    border-radius: 24px;
+    box-shadow: 0 18px 60px rgba(74, 66, 43, 0.06);
+}
+
+/* =========================
+   PAINEL ESQUERDO
+========================= */
+
+.welcome-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 36px 44px 26px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(246, 233, 183, 0.45),
+            transparent 28%
+        ),
+        linear-gradient(145deg, #F3F0E5, #F8F6EE 60%, #F0EBDD);
+}
+
+.brand {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--yellow-dark);
+    background: rgba(255, 254, 250, 0.8);
+    border: 1px solid rgba(212, 175, 54, 0.2);
+    border-radius: 13px;
+    font-size: 29px;
+}
+
+.brand-dot {
+    color: var(--yellow-dark);
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 490px;
+    margin-top: clamp(32px, 5vh, 52px);
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.eyebrow-line {
+    width: 25px;
+    height: 1px;
+    background: var(--green);
+}
+
+.welcome-content h1 {
+    margin-top: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 37px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+}
+
+.welcome-content h1 span {
+    color: var(--green);
+    font-style: italic;
+}
+
+.welcome-description {
+    max-width: 410px;
+    margin-top: 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* Cartões de benefícios */
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 27px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 82px;
+    padding: 15px 17px;
+    background: rgba(255, 254, 250, 0.78);
+    border: 1px solid rgba(216, 206, 184, 0.55);
+    border-radius: 15px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--yellow);
+    background: #FFFEFA;
+}
+
+.feature-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    color: var(--green);
+    background: var(--green-light);
+    border-radius: 13px;
+    font-size: 23px;
+}
+
+.feature-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.feature-card h3 {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.feature-arrow {
+    align-self: flex-start;
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+/* Flores decorativas */
+
+.flower {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    color: rgba(212, 175, 54, 0.23);
+    user-select: none;
+}
+
+.flower-one {
+    top: 130px;
+    right: 33px;
+    font-size: 62px;
+    transform: rotate(-15deg);
+}
+
+.flower-two {
+    right: 17px;
+    bottom: 130px;
+    color: rgba(126, 139, 104, 0.22);
+    font-size: 37px;
+    transform: rotate(15deg);
+}
+
+.flower-three {
+    bottom: 43px;
+    left: 46%;
+    font-size: 26px;
+    transform: rotate(20deg);
+}
+
+.welcome-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--text-light);
+    font-size: 10px;
+}
+
+/* =========================
+   PAINEL DIREITO
+========================= */
+
+.form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+    background: var(--surface);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 390px;
+    margin: auto;
+}
+
+.mobile-brand {
+    display: none;
+}
+
+/* Título */
+
+.form-heading {
+    margin-bottom: 29px;
+}
+
+.form-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.form-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 2.5vw, 36px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.form-heading h2 span {
+    color: var(--yellow-dark);
+}
+
+.form-heading p {
+    margin-top: 11px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.input-group label {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.input-group input {
+    width: 100%;
+    height: 51px;
+    padding: 0 15px;
+    color: var(--text);
+    background: #FDFCF8;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    outline: none;
+    font-size: 13px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.input-group input::placeholder {
+    color: #B2AC9F;
+}
+
+.input-group input:hover {
+    border-color: var(--beige-dark);
+}
+
+.input-group input:focus {
+    background: #FFFFFF;
+    border-color: var(--yellow-dark);
+    box-shadow: 0 0 0 3px rgba(232, 199, 90, 0.16);
+}
+
+.input-hint {
+    color: var(--text-light);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* Botão principal */
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 53px;
+    margin-top: 4px;
+    padding: 0 19px;
+    color: #302F28;
+    background: var(--yellow);
+    border: 1px solid transparent;
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.submit-button span {
+    font-size: 19px;
+    transition: transform 0.25s ease;
+}
+
+.submit-button:hover {
+    background: #F0D575;
+    box-shadow: 0 7px 18px rgba(212, 175, 54, 0.18);
+    transform: translateY(-2px);
+}
+
+.submit-button:hover span {
+    transform: translate(2px, -2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Erros de validação */
+
+.error-message {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    color: #914B43;
+    background: #FBEEEB;
+    border: 1px solid #F1D5CE;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.error-message p + p {
+    margin-top: 4px;
+}
+
+/* Link para login */
+
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 27px;
+}
+
+.form-divider span {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.form-divider p {
+    flex-shrink: 0;
+    color: var(--text-light);
+    font-size: 10px;
+}
+
+.login-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 14px;
+    color: var(--green);
+    background: transparent;
+    border: 1px solid #DDE3D3;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.login-link:hover {
+    background: var(--green-light);
+    border-color: #C7D0BB;
+}
+
+/* Rodapé do formulário */
+
+.form-footer {
+    margin-top: 30px;
+    color: var(--text-light);
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.form-footer span {
+    margin-left: 4px;
+    color: var(--yellow-dark);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (min-width: 721px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 16px;
+    }
+
+    .login-page {
+        height: min(760px, calc(100dvh - 32px));
+        min-height: 0;
+    }
+
+    .welcome-panel,
+    .form-panel {
+        min-height: 0;
+    }
+
+    .form-panel {
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 721px) and (max-height: 750px) {
+    .welcome-panel {
+        padding: 22px 32px 14px;
+    }
+
+    .welcome-content {
+        margin-top: 20px;
+    }
+
+    .welcome-content h1 {
+        font-size: 32px;
+    }
+
+    .welcome-description {
+        margin-top: 9px;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .feature-list {
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .feature-card {
+        min-height: 64px;
+        padding: 9px 12px;
+    }
+
+    .feature-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 19px;
+    }
+
+    .feature-card h3 {
+        margin-bottom: 3px;
+        font-size: 12px;
+    }
+
+    .feature-card p {
+        font-size: 10px;
+    }
+
+    .welcome-footer {
+        padding-top: 10px;
+    }
+
+    .form-panel {
+        padding: 24px 32px;
+    }
+
+    .form-heading {
+        margin-bottom: 20px;
+    }
+
+    form {
+        gap: 15px;
+    }
+
+    .input-group input {
+        height: 46px;
+    }
+
+    .form-divider {
+        margin-top: 20px;
+    }
+
+    .form-footer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        display: block;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .login-page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .welcome-panel {
+        display: none;
+    }
+
+    .form-panel {
+        flex: 1;
+        align-items: flex-start;
+        padding: 35px 24px;
+    }
+
+    .form-container {
+        max-width: 430px;
+        margin: auto;
+    }
+
+    .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 42px;
+        font-family: 'Playfair Display', serif;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: -0.8px;
+    }
+
+    .mobile-brand .brand-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 25px;
+    }
+
+    .form-heading {
+        margin-bottom: 27px;
+    }
+
+    .form-heading h2 {
+        font-size: 32px;
+    }
+
+    form {
+        gap: 20px;
+    }
+
+    .input-group input {
+        height: 52px;
+    }
+
+    .submit-button {
+        min-height: 54px;
+    }
+
+    .form-footer {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 380px) {
+    .form-panel {
+        padding: 28px 19px;
+    }
+
+    .mobile-brand {
+        margin-bottom: 32px;
+    }
+
+    .form-heading h2 {
+        font-size: 29px;
+    }
+
+    .form-divider {
+        gap: 8px;
+    }
+
+    .form-divider p {
+        font-size: 9px;
+    }
+}

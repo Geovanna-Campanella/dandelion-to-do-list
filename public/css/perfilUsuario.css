@@ -1,0 +1,709 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F8F7F1;
+    color: #302F28;
+    font-family: 'DM Sans', sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* ==============================
+   LAYOUT COM SIDEBAR
+============================== */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+    padding: 40px clamp(22px, 4vw, 54px);
+    background: #F8F7F1;
+}
+
+.perfil-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.perfil-cabecalho {
+    margin-bottom: 28px;
+}
+
+.perfil-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    color: #817B6E;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.perfil-voltar span {
+    font-size: 19px;
+    transition: transform 0.2s ease;
+}
+
+.perfil-voltar:hover {
+    color: #7E8B68;
+}
+
+.perfil-voltar:hover span {
+    transform: translateX(-3px);
+}
+
+.perfil-etiqueta {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #8B956F;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.perfil-cabecalho h1 {
+    margin: 0;
+
+    color: #302F28;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+.perfil-cabecalho h1 > span {
+    color: #D4AF36;
+}
+
+.perfil-cabecalho > p {
+    margin: 10px 0 0;
+
+    color: #817B6E;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ==============================
+   CARTÃO PRINCIPAL
+============================== */
+
+.perfil-card {
+    overflow: hidden;
+
+    background: #FFFEFA;
+    border: 1px solid #EBE5D8;
+    border-radius: 19px;
+    box-shadow: 0 5px 22px rgba(68, 60, 39, 0.035);
+}
+
+/* ==============================
+   APRESENTAÇÃO DO PERFIL
+============================== */
+
+.perfil-apresentacao {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 32px;
+
+    background:
+        radial-gradient(
+            circle at 94% 20%,
+            rgba(232, 199, 90, 0.15),
+            transparent 28%
+        ),
+        linear-gradient(120deg, #F5F1E5, #FBF9F1);
+
+    border-bottom: 1px solid #EBE5D8;
+}
+
+.perfil-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+
+    color: #6F754F;
+    background: #E8EDDF;
+    border: 4px solid rgba(255, 254, 250, 0.9);
+    border-radius: 26px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 39px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 14px rgba(74, 82, 54, 0.08);
+}
+
+.perfil-identidade {
+    min-width: 0;
+}
+
+.perfil-tipo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 9px;
+
+    color: #8B805D;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.perfil-flor {
+    color: #C6A543;
+    font-size: 17px;
+}
+
+.perfil-identidade h2 {
+    margin: 0;
+
+    color: #302F28;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 29px);
+    font-weight: 500;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+.perfil-identidade > p {
+    margin: 7px 0 0;
+
+    color: #817B6E;
+    font-size: 13px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   INFORMAÇÕES DA CONTA
+============================== */
+
+.perfil-detalhes {
+    padding: 28px 32px 30px;
+}
+
+.perfil-detalhes-titulo {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+.perfil-detalhes-titulo h3 {
+    margin: 0;
+
+    color: #39362D;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.perfil-detalhes-titulo > span {
+    color: #A19A8C;
+    font-size: 11px;
+}
+
+.perfil-dado {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px 0;
+    border-bottom: 1px solid #F0ECE3;
+}
+
+.perfil-dado:last-child {
+    padding-bottom: 4px;
+    border-bottom: none;
+}
+
+.perfil-dado-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    color: #A18A42;
+    background: #F8F3E5;
+    border: 1px solid #F0E8D5;
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.perfil-dado-texto {
+    min-width: 0;
+}
+
+.perfil-dado-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #969082;
+    font-size: 11px;
+}
+
+.perfil-dado-texto p {
+    margin: 0;
+
+    color: #39362D;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   CABEÇALHO DO FORMULÁRIO
+============================== */
+
+.perfil-edicao-card {
+    padding: 30px 32px;
+}
+
+.perfil-form-titulo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding-bottom: 23px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #EEE9DE;
+}
+
+.perfil-form-flor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    color: #B99A36;
+    background: #F8F2DF;
+    border: 1px solid #F0E5C5;
+    border-radius: 13px;
+
+    font-size: 27px;
+}
+
+.perfil-form-titulo h2 {
+    margin: 0;
+
+    color: #38352B;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.perfil-form-titulo p {
+    margin: 5px 0 0;
+
+    color: #8A8376;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ==============================
+   FORMULÁRIO DE EDIÇÃO
+============================== */
+
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.perfil-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.perfil-campo label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    color: #454137;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.perfil-opcional {
+    color: #A39B8C;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.perfil-campo input {
+    width: 100%;
+    height: 49px;
+    padding: 0 14px;
+
+    color: #302F28;
+    background: #FDFCF8;
+    border: 1px solid #E8E2D6;
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.perfil-campo input::placeholder {
+    color: #B0A999;
+}
+
+.perfil-campo input:hover {
+    border-color: #D8CEB8;
+}
+
+.perfil-campo input:focus {
+    background: #FFFFFF;
+    border-color: #D4AF36;
+    box-shadow: 0 0 0 3px rgba(232, 199, 90, 0.16);
+}
+
+.perfil-ajuda {
+    margin: -2px 0 0;
+
+    color: #969082;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* ==============================
+   ERROS
+============================== */
+
+.perfil-erros {
+    margin-bottom: 24px;
+    padding: 15px 17px;
+
+    color: #914B43;
+    background: #FBF0ED;
+    border: 1px solid #EFD8D2;
+    border-radius: 11px;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+.perfil-erros strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.perfil-erros ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* ==============================
+   BOTÕES
+============================== */
+
+.perfil-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 22px 32px 30px;
+    border-top: 1px solid #EEE9DE;
+}
+
+.perfil-form-acoes {
+    padding: 23px 0 0;
+    margin-top: 3px;
+}
+
+.perfil-botao-principal,
+.perfil-botao-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 45px;
+    padding: 0 17px;
+
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.perfil-botao-principal {
+    color: #393421;
+    background: #E8C75A;
+    border: 1px solid #E3BE45;
+}
+
+.perfil-botao-principal span {
+    font-size: 17px;
+}
+
+.perfil-botao-principal:hover {
+    background: #F0D575;
+    box-shadow: 0 5px 14px rgba(212, 175, 54, 0.16);
+    transform: translateY(-1px);
+}
+
+.perfil-botao-secundario {
+    color: #797264;
+    background: transparent;
+    border: 1px solid #E6DFD0;
+}
+
+.perfil-botao-secundario:hover {
+    color: #514B3D;
+    background: #F8F5EC;
+    border-color: #D8CEB8;
+}
+
+.perfil-botao-principal:focus-visible,
+.perfil-botao-secundario:focus-visible {
+    outline: 3px solid rgba(212, 175, 54, 0.4);
+    outline-offset: 3px;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.perfil-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin: 24px 0 0;
+
+    color: #A29B8C;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.perfil-rodape span {
+    color: #C5A442;
+    font-size: 15px;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 1000px) {
+    .conteudo {
+        padding: 32px 25px;
+    }
+
+    .perfil-apresentacao {
+        padding: 27px;
+    }
+
+    .perfil-detalhes {
+        padding: 25px 27px;
+    }
+
+    .perfil-edicao-card {
+        padding: 27px;
+    }
+}
+
+@media (max-width: 760px) {
+    .conteudo {
+        padding: 27px 22px;
+    }
+}
+
+@media (max-width: 540px) {
+    .conteudo {
+        padding: 24px 15px;
+    }
+
+    .perfil-cabecalho h1 {
+        font-size: 32px;
+    }
+
+    .perfil-cabecalho > p {
+        font-size: 12px;
+    }
+
+    .perfil-apresentacao {
+        align-items: flex-start;
+        gap: 15px;
+        padding: 22px 18px;
+    }
+
+    .perfil-avatar {
+        width: 65px;
+        height: 65px;
+        border-radius: 20px;
+        font-size: 30px;
+    }
+
+    .perfil-identidade h2 {
+        font-size: 22px;
+    }
+
+    .perfil-identidade > p {
+        font-size: 12px;
+    }
+
+    .perfil-tipo {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .perfil-detalhes {
+        padding: 22px 18px;
+    }
+
+    .perfil-detalhes-titulo {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .perfil-detalhes-titulo h3 {
+        font-size: 18px;
+    }
+
+    .perfil-dado {
+        gap: 12px;
+    }
+
+    .perfil-dado-icone {
+        width: 37px;
+        height: 37px;
+        font-size: 19px;
+    }
+
+    .perfil-dado-texto p {
+        font-size: 13px;
+    }
+
+    .perfil-acoes {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        padding: 20px 18px 22px;
+    }
+
+    .perfil-botao-principal,
+    .perfil-botao-secundario {
+        width: 100%;
+        min-height: 46px;
+    }
+
+    .perfil-edicao-card {
+        padding: 20px 17px;
+    }
+
+    .perfil-form-titulo {
+        align-items: flex-start;
+        gap: 11px;
+        padding-bottom: 19px;
+        margin-bottom: 22px;
+    }
+
+    .perfil-form-flor {
+        width: 39px;
+        height: 39px;
+        font-size: 24px;
+    }
+
+    .perfil-form-titulo h2 {
+        font-size: 20px;
+    }
+
+    .perfil-form-titulo p {
+        font-size: 11px;
+    }
+
+    .perfil-form {
+        gap: 20px;
+    }
+
+    .perfil-campo input {
+        height: 47px;
+    }
+
+    .perfil-form-acoes {
+        padding-top: 20px;
+    }
+
+    .perfil-rodape {
+        font-size: 10px;
+    }
+}

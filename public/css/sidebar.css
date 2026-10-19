@@ -1,0 +1,585 @@
+/* =========================
+   SIDEBAR DANDELION
+========================= */
+
+.sidebar {
+    --sidebar-bg: #FFFEFA;
+    --sidebar-text: #302F28;
+    --sidebar-muted: #918B7D;
+    --sidebar-yellow: #D4AF36;
+    --sidebar-green: #7E8B68;
+    --sidebar-border: #EAE6DB;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    width: 260px;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 30px 20px 20px;
+
+    overflow-y: auto;
+
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar-header {
+    padding: 0 7px;
+    margin-bottom: 44px;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: fit-content;
+
+    color: var(--sidebar-text);
+    text-decoration: none;
+}
+
+.sidebar-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    color: var(--sidebar-yellow);
+    background: #F8F3E4;
+    border: 1px solid #F0E5C5;
+    border-radius: 13px;
+
+    font-size: 26px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.sidebar-logo:hover .sidebar-logo-icon {
+    transform: rotate(-10deg);
+    background: #F5EAC6;
+}
+
+.sidebar-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.logo-dot {
+    color: var(--sidebar-yellow);
+}
+
+.sidebar-subtitle {
+    margin-top: 7px;
+    margin-left: 51px;
+
+    color: var(--sidebar-muted);
+    font-size: 11px;
+    letter-spacing: 0.2px;
+}
+
+/* =========================
+   TÍTULO DA NAVEGAÇÃO
+========================= */
+
+.sidebar-navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-section-title {
+    display: block;
+    padding: 0 12px;
+    margin-bottom: 13px;
+
+    color: #AAA394;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar-links a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 49px;
+    padding: 0 13px;
+
+    color: #777265;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Ícones */
+
+.sidebar-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    color: #A8944E;
+    background: #F8F5EB;
+    border-radius: 9px;
+
+    font-size: 20px;
+    line-height: 1;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.sidebar-link-text {
+    flex: 1;
+}
+
+.sidebar-link-arrow {
+    color: transparent;
+    font-size: 15px;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Hover */
+
+.sidebar-links a:hover {
+    color: #51491F;
+    background: #FAF6E8;
+    border-color: #F0E7C9;
+    transform: translateX(2px);
+}
+
+.sidebar-links a:hover .sidebar-link-icon {
+    color: #9C7B1F;
+    background: #F3E8BE;
+}
+
+.sidebar-links a:hover .sidebar-link-arrow {
+    color: #B59A43;
+}
+
+/* Página selecionada */
+
+.sidebar-links a.active {
+    color: #4F482D;
+    background: #F7F0D7;
+    border-color: #EDE2B6;
+    font-weight: 700;
+}
+
+.sidebar-links a.active::before {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: -1px;
+
+    width: 3px;
+
+    content: '';
+    background: var(--sidebar-yellow);
+    border-radius: 0 4px 4px 0;
+}
+
+.sidebar-links a.active .sidebar-link-icon {
+    color: #8D711E;
+    background: #EFE1A9;
+}
+
+.sidebar-links a.active .sidebar-link-arrow {
+    color: #B59A43;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    margin-top: auto;
+    padding-top: 35px;
+}
+
+/* Cartão inspirador */
+
+.sidebar-note {
+    position: relative;
+    padding: 17px 15px 16px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #F8F5E9 0%,
+            #F3F0E3 100%
+        );
+
+    border: 1px solid #EBE3CF;
+    border-radius: 15px;
+}
+
+.sidebar-note::after {
+    position: absolute;
+    right: -15px;
+    bottom: -25px;
+
+    width: 80px;
+    height: 80px;
+
+    content: '';
+    background: rgba(232, 199, 90, 0.10);
+    border-radius: 50%;
+}
+
+.sidebar-note-flower {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+    margin-bottom: 13px;
+
+    color: #B99A36;
+    background: #FFFCF1;
+    border: 1px solid #F0E5C5;
+    border-radius: 10px;
+
+    font-size: 21px;
+}
+
+.sidebar-note-title {
+    position: relative;
+    z-index: 1;
+
+    color: #4C4938;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-note-text {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 7px;
+
+    color: #898271;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/* =========================
+   BOTÃO SAIR
+========================= */
+
+.sidebar-logout {
+    margin: 0;
+}
+
+.sidebar-logout button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 45px;
+    padding: 11px 13px;
+
+    color: #817767;
+    background: transparent;
+
+    border: 1px solid #E8E0CE;
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.logout-icon {
+    font-size: 17px;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-logout button:hover {
+    color: #9B5555;
+    background: #FBF1EF;
+    border-color: #EBD6D2;
+}
+
+.sidebar-logout button:hover .logout-icon {
+    transform: translate(2px, -2px);
+}
+
+/* Assinatura */
+
+.sidebar-version {
+    color: #B0A999;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* =========================
+   BARRA DE ROLAGEM
+========================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #E6DFCE;
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 760px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+        min-height: auto;
+
+        padding: 20px;
+        overflow: visible;
+
+        border-right: none;
+        border-bottom: 1px solid var(--sidebar-border);
+    }
+
+    .sidebar-header {
+        margin-bottom: 24px;
+    }
+
+    .sidebar-logo-name {
+        font-size: 23px;
+    }
+
+    .sidebar-navigation {
+        margin-bottom: 0;
+    }
+
+    .sidebar-section-title {
+        margin-bottom: 10px;
+    }
+
+    .sidebar-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sidebar-links a {
+        flex: 1 1 150px;
+        min-width: 0;
+        padding: 8px 10px;
+    }
+
+    .sidebar-links a:hover {
+        transform: none;
+    }
+
+    .sidebar-bottom {
+        flex-direction: row;
+        align-items: center;
+        margin-top: 17px;
+        padding-top: 0;
+    }
+
+    .sidebar-note,
+    .sidebar-version {
+        display: none;
+    }
+
+    .sidebar-logout {
+        width: auto;
+        margin-left: auto;
+    }
+
+    .sidebar-logout button {
+        width: auto;
+        min-height: 40px;
+        padding: 9px 13px;
+    }
+}
+
+@media (max-width: 420px) {
+    .sidebar {
+        padding: 18px 14px;
+    }
+
+    .sidebar-header {
+        margin-bottom: 21px;
+    }
+
+    .sidebar-links a {
+        flex-basis: 125px;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .sidebar-link-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .sidebar-bottom {
+        gap: 10px;
+    }
+}
+
+/* =========================
+   FONTES MAIORES — SIDEBAR
+========================= */
+
+/* Logo */
+.sidebar-logo-name {
+    font-size: 28px;
+}
+
+.sidebar-subtitle {
+    font-size: 12px;
+}
+
+/* Título da navegação */
+.sidebar-section-title {
+    font-size: 11px;
+}
+
+/* Links */
+.sidebar-links a {
+    font-size: 15px;
+    min-height: 52px;
+}
+
+.sidebar-link-icon {
+    font-size: 22px;
+}
+
+.sidebar-link-arrow {
+    font-size: 17px;
+}
+
+/* Cartão inspirador */
+.sidebar-note-title {
+    font-size: 16px;
+}
+
+.sidebar-note-text {
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+/* Botão de sair */
+.sidebar-logout button {
+    font-size: 14px;
+    min-height: 48px;
+}
+
+.logout-icon {
+    font-size: 19px;
+}
+
+/* Assinatura */
+.sidebar-version {
+    font-size: 9px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 420px) {
+    .sidebar-logo-name {
+        font-size: 25px;
+    }
+
+    .sidebar-subtitle {
+        font-size: 11px;
+    }
+
+    .sidebar-links a {
+        font-size: 13px;
+    }
+
+    .sidebar-note-title {
+        font-size: 15px;
+    }
+
+    .sidebar-note-text {
+        font-size: 12px;
+    }
+
+    .sidebar-logout button {
+        font-size: 13px;
+    }
+}

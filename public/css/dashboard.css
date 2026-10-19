@@ -1,0 +1,571 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F8F7F1;
+    color: #302F28;
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+/* ==============================
+   LAYOUT
+============================== */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+    padding: 42px clamp(24px, 4vw, 56px);
+    background: #F8F7F1;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.header {
+    width: 100%;
+}
+
+.Title {
+    margin: 0;
+
+    color: #302F28;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+
+    overflow-wrap: anywhere;
+}
+
+.subTitle {
+    margin: 10px 0 0;
+
+    color: #8A826F;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    line-height: 1.8;
+}
+
+.header-divider {
+    width: 100%;
+    height: 1px;
+    margin: 30px 0 36px;
+
+    background: #E5DECE;
+    border: 0;
+}
+
+/* ==============================
+   CABEÇALHO DAS TAREFAS
+============================== */
+
+.tarefas {
+    width: 100%;
+}
+
+.tarefas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+.tarefas-header h2 {
+    margin: 0;
+
+    color: #302F28;
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+}
+
+/* Botão de cadastrar */
+
+.cadastrar-tarefa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 45px;
+    padding: 0 17px;
+
+    color: #393421;
+    background: #E8C75A;
+    border: 1px solid #E3BE45;
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cadastrar-icone {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.cadastrar-tarefa:hover {
+    background: #F0D575;
+    box-shadow: 0 5px 14px rgba(212, 175, 54, 0.16);
+    transform: translateY(-1px);
+}
+
+.cadastrar-tarefa:active {
+    transform: translateY(0);
+}
+
+/* ==============================
+   LISTA DE TAREFAS
+============================== */
+
+.tarefas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+/* Cartão individual */
+
+.tarefa {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 25px;
+
+    min-width: 0;
+    padding: 23px 24px;
+
+    background: #FFFEFA;
+    border: 1px solid #EBE5D8;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 12px rgba(68, 60, 39, 0.025);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tarefa:hover {
+    border-color: #E4D8B8;
+    box-shadow: 0 7px 20px rgba(68, 60, 39, 0.05);
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   CONTEÚDO DA TAREFA
+============================== */
+
+.tarefa-conteudo {
+    min-width: 0;
+}
+
+.tarefa-conteudo h3 {
+    margin: 0 0 9px;
+
+    color: #302F28;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.tarefa-descricao {
+    margin: 0;
+
+    color: #817B6E;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    overflow-wrap: anywhere;
+}
+
+/* Status */
+
+.tarefa-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 14px 0 0;
+
+    color: #858173;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.status-ponto {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+
+    background: #91A17C;
+    border-radius: 50%;
+}
+
+/* ==============================
+   LATERAL DA TAREFA
+============================== */
+
+.tarefa-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+
+    min-width: 145px;
+}
+
+/* Prioridade */
+
+.tarefa-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 27px;
+    padding: 5px 12px;
+
+    color: #7B682B;
+    background: #F8F0D4;
+    border: 1px solid #EFE3B8;
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* Prazo */
+
+.tarefa-data {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+
+    color: #8E8779;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.data-icone {
+    color: #AD9854;
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* ==============================
+   AÇÕES
+============================== */
+
+.tarefa-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+
+    margin-top: 3px;
+}
+
+.tarefa-acoes form {
+    display: inline-flex;
+    margin: 0;
+}
+
+/* Editar */
+
+.tarefa-editar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 32px;
+    padding: 0 11px;
+
+    color: #71805E;
+    background: #F0F3E9;
+    border: 1px solid #E1E7D7;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tarefa-editar:hover {
+    background: #E5EBD9;
+    border-color: #CCD6BC;
+}
+
+/* Excluir */
+
+.tarefa-excluir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 32px;
+    padding: 0 11px;
+
+    color: #A16F65;
+    background: transparent;
+    border: 1px solid #EDE0DC;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tarefa-excluir:hover {
+    color: #994D42;
+    background: #FBF0ED;
+    border-color: #E9D0CA;
+}
+
+/* ==============================
+   LISTA VAZIA
+============================== */
+
+.tarefas-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 210px;
+    padding: 35px 20px;
+
+    background: #FFFEFA;
+    border: 1px dashed #DED5C1;
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.vazio-flor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+    margin-bottom: 14px;
+
+    color: #C4A443;
+    background: #F8F2DF;
+    border-radius: 14px;
+
+    font-size: 28px;
+}
+
+.tarefas-vazio p {
+    margin: 0;
+
+    color: #8C8577;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 1000px) {
+    .conteudo {
+        padding: 32px 25px;
+    }
+
+    .tarefa {
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .tarefa-lateral {
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .conteudo {
+        padding: 28px 22px;
+    }
+
+    .header-divider {
+        margin: 24px 0 30px;
+    }
+
+    .tarefas-header h2 {
+        font-size: 25px;
+    }
+
+    .tarefa {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 19px;
+        padding: 20px;
+    }
+
+    .tarefa-lateral {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+    }
+
+    .tarefa-etiqueta {
+        justify-self: start;
+    }
+
+    .tarefa-data {
+        justify-self: end;
+        text-align: right;
+    }
+
+    .tarefa-acoes {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        padding-top: 12px;
+        border-top: 1px solid #F0ECE3;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo {
+        padding: 24px 15px;
+    }
+
+    .Title {
+        font-size: 30px;
+    }
+
+    .subTitle {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .header-divider {
+        margin: 22px 0 27px;
+    }
+
+    .tarefas-header {
+        align-items: flex-start;
+        gap: 13px;
+        margin-bottom: 17px;
+    }
+
+    .tarefas-header h2 {
+        font-size: 23px;
+    }
+
+    .cadastrar-tarefa {
+        min-height: 40px;
+        gap: 6px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .cadastrar-icone {
+        font-size: 18px;
+    }
+
+    .tarefas-lista {
+        gap: 11px;
+    }
+
+    .tarefa {
+        gap: 17px;
+        padding: 18px 15px;
+        border-radius: 13px;
+    }
+
+    .tarefa-conteudo h3 {
+        font-size: 20px;
+    }
+
+    .tarefa-descricao {
+        font-size: 12px;
+    }
+
+    .tarefa-status {
+        font-size: 11px;
+    }
+
+    .tarefa-lateral {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: start;
+        gap: 11px;
+    }
+
+    .tarefa-data {
+        justify-self: start;
+        text-align: left;
+    }
+
+    .tarefa-acoes {
+        grid-column: 1;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .tarefas-vazio {
+        min-height: 180px;
+        padding: 25px 15px;
+    }
+}
