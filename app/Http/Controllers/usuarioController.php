@@ -66,18 +66,43 @@ class usuarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UsuarioFormRequest $request)
+    public function update(Request $request)
     {
         $usuario = Auth::user();
 
-        $validated = $request->validated();
+        // Trata o valor "null" enviado pelo formulário como campo vazio
+        if ($request->input('senha') === 'null') {
+            $request->merge(['senha' => null]);
+        }
+
+        $validated = $request->validate([
+            'nome' => ['required', 'string', 'min:3', 'max:255'],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:usuario,email,' . $usuario->id,
+            ],
+            'senha' => ['nullable', 'string', 'min:6'],
+        ], [
+            'nome.required' => 'O nome é obrigatório.',
+            'nome.min' => 'O nome deve ter pelo menos :min caracteres.',
+            'nome.max' => 'O nome não pode ultrapassar :max caracteres.',
+
+            'email.required' => 'O e-mail é obrigatório.',
+            'email.email' => 'Informe um endereço de e-mail válido.',
+            'email.unique' => 'Este e-mail já está cadastrado.',
+
+            'senha.min' => 'A senha deve ter pelo menos :min caracteres.',
+        ]);
 
         $dados = [
             'nome' => $validated['nome'],
             'email' => $validated['email'],
         ];
 
-        // Só altera a senha se o usuário preencher esse campo
+        // Só altera a senha se o campo for preenchido
         if (!empty($validated['senha'])) {
             $dados['senha'] = Hash::make($validated['senha']);
         }

@@ -80,7 +80,7 @@ class tarefaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(TarefaFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $tarefa = Auth::user()->tarefas()->findOrFail($id);
 
